@@ -78,7 +78,7 @@ const post = [
        author: 'Douglas Jones',
        time: '1 settimana fa',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-       postImage: 'img/img04jpg',
+       postImage: 'img/img04.jpg',
        likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
        likeText: 'Mi piace',
        likeIt: 'Piace a',
