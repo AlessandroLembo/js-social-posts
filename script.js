@@ -91,7 +91,7 @@ const post = [
 // Recupero gli elementi dalla pagina.
 const container = document.getElementById('container');
 
-
+// ciclo for per creare i social posts
 let posts = '';
 
 for (let i = 0; i < post.length; i++){
@@ -129,3 +129,26 @@ for (let i = 0; i < post.length; i++){
 }
 
 container.innerHTML = posts;
+
+const buttons = document.querySelectorAll('button');
+console.log(buttons);
+
+
+// Aggancio un event listener al button
+
+for (let i = 0; i < buttons.length; i++){
+
+    const button = buttons[i];
+    
+    button.addEventListener('click', function(){
+        button.classList.add('like-button-liked');
+         
+    })
+
+}
+        
+        
+
+
+
+   
