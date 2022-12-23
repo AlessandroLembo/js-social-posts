@@ -1,5 +1,3 @@
-console.log('JS OK');
-
 /*
 TRACCIA: 
 
@@ -37,11 +35,7 @@ const post = [
        time: '09/18/2022',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
        postImage: 'img/img01.jpg',
-       likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
-       likeText: 'Mi piace',
-       likeIt: 'Piace a',
        likeNumber: '26',
-       peopleNumber: 'persone',
     }, 
     
     {
@@ -51,11 +45,7 @@ const post = [
        time: '2 mesi fa',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
        postImage: 'img/img02.jpg',
-       likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
-       likeText: 'Mi piace',
-       likeIt: 'Piace a',
        likeNumber: '42',
-       peopleNumber: 'persone',
     }, 
     
     {
@@ -65,11 +55,7 @@ const post = [
        time: '05/13/2022',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
        postImage: 'img/img03.jpg',
-       likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
-       likeText: 'Mi piace',
-       likeIt: 'Piace a',
        likeNumber: '13',
-       peopleNumber: 'persone',
     }, 
     
     {
@@ -79,11 +65,7 @@ const post = [
        time: '1 settimana fa',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
        postImage: 'img/img04.jpg',
-       likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
-       likeText: 'Mi piace',
-       likeIt: 'Piace a',
        likeNumber: '52',
-       peopleNumber: 'persone',
     }
 ];
 
@@ -120,7 +102,7 @@ for (let i = 0; i < post.length; i++){
                       <span class="like-button__label">Mi Piace</span>
                     </button>
                   </div>
-                  <div class="likes__counter">Piace a <b id="like-counter-1" class="js-likes-counter">${post[i].likeNumber}</b> persone</div>
+                  <div class="likes__counter">Piace a <b id="like-counter-${post[i].id}" class="js-likes-counter">${post[i].likeNumber}</b> persone</div>
                 </div>
               </div>
           </div> 
@@ -131,23 +113,33 @@ for (let i = 0; i < post.length; i++){
 container.innerHTML = posts;
 
 const buttons = document.querySelectorAll('button');
-console.log(buttons);
 
 
-// Aggancio un event listener al button
-
-for (let i = 0; i < buttons.length; i++){
+for (let i = 0; i < post.length; i++){
 
     const button = buttons[i];
     
+    const counter = document.getElementById(`like-counter-${i+1}`);
+    console.log(counter);
+    
+    // Aggancio un event listener al button
     button.addEventListener('click', function(){
+        
+        // Aggiungo la classe per cambiare colore al button
         button.classList.add('like-button-liked');
-         
+        
+        // Incremento il numero dei likes
+        const numb = parseInt(post[i].likeNumber);
+        const increment = numb + 1;
+    
+        counter.innerHTML = increment;
+   
     })
 
 }
-        
-        
+
+  
+  
 
 
 
