@@ -31,17 +31,21 @@ incrementiamo il counter dei likes relativo.
 
 const post = [
     {
+       id: '1', 
        profileImage: 'profile-01.jpg',
        author: 'Anna Mangione',
-       time: '4 mesi fa',
+       time: '09/18/2022',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
        postImage: 'img-01-jpg',
        likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
        likeText: 'Mi piace',
-       likeNumber: "Piace a `<i class='like-button__icon fas fa-thumbs-up' aria-hidden='true'></i>` persone",
+       likeIt: 'Piace a',
+       likeNumber: '26',
+       peopleNumber: 'persone',
     }, 
     
     {
+       id: '2', 
        profileImage: 'profile-02.jpg',
        author: 'Sofia Perlari',
        time: '2 mesi fa',
@@ -49,21 +53,27 @@ const post = [
        postImage: 'img-02-jpg',
        likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
        likeText: 'Mi piace',
-       likeNumber: "Piace a `<i class='like-button__icon fas fa-thumbs-up' aria-hidden='true'></i>` persone",
+       likeIt: 'Piace a',
+       likeNumber: '42',
+       peopleNumber: 'persone',
     }, 
     
     {
+       id: '3', 
        profileImage: 'profile-03.jpg',
-       author: 'Luca Formicola',
+       author: '05/13/2022',
        time: 'Ieri',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
        postImage: 'img-03-jpg',
        likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
        likeText: 'Mi piace',
-       likeNumber: "Piace a `<i class='like-button__icon fas fa-thumbs-up' aria-hidden='true'></i>` persone",
+       likeIt: 'Piace a',
+       likeNumber: '13',
+       peopleNumber: 'persone',
     }, 
     
     {
+       id: '4',
        profileImage: 'profile-04.jpg',
        author: 'Douglas Jones',
        time: '1 settimana fa',
@@ -71,7 +81,8 @@ const post = [
        postImage: 'img-04-jpg',
        likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
        likeText: 'Mi piace',
-       likeNumber: "Piace a `<i class='like-button__icon fas fa-thumbs-up' aria-hidden='true'></i>` persone",
-
+       likeIt: 'Piace a',
+       likeNumber: '52',
+       peopleNumber: 'persone',
     }
 ];
