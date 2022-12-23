@@ -27,16 +27,16 @@ Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e
 incrementiamo il counter dei likes relativo.
 */
 
-// Creazione di un array di oggetti.
 
+// Creazione di un array di oggetti.
 const post = [
     {
        id: '1', 
-       profileImage: 'profile-01.jpg',
+       profileImage: 'img/profile01.jpg',
        author: 'Anna Mangione',
        time: '09/18/2022',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-       postImage: 'img-01-jpg',
+       postImage: 'img/img01.jpg',
        likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
        likeText: 'Mi piace',
        likeIt: 'Piace a',
@@ -46,11 +46,11 @@ const post = [
     
     {
        id: '2', 
-       profileImage: 'profile-02.jpg',
+       profileImage: 'img/profile02.jpg',
        author: 'Sofia Perlari',
        time: '2 mesi fa',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-       postImage: 'img-02-jpg',
+       postImage: 'img/img02.jpg',
        likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
        likeText: 'Mi piace',
        likeIt: 'Piace a',
@@ -60,11 +60,11 @@ const post = [
     
     {
        id: '3', 
-       profileImage: 'profile-03.jpg',
-       author: '05/13/2022',
-       time: 'Ieri',
+       profileImage: 'img/profile03.jpg',
+       author: 'Luca Formicola',
+       time: '05/13/2022',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-       postImage: 'img-03-jpg',
+       postImage: 'img/img03.jpg',
        likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
        likeText: 'Mi piace',
        likeIt: 'Piace a',
@@ -74,11 +74,11 @@ const post = [
     
     {
        id: '4',
-       profileImage: 'profile-04.jpg',
+       profileImage: 'img/profile04.jpg',
        author: 'Douglas Jones',
        time: '1 settimana fa',
        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-       postImage: 'img-04-jpg',
+       postImage: 'img/img04jpg',
        likeIcon: `<i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>`,
        likeText: 'Mi piace',
        likeIt: 'Piace a',
@@ -86,3 +86,46 @@ const post = [
        peopleNumber: 'persone',
     }
 ];
+
+
+// Recupero gli elementi dalla pagina.
+const container = document.getElementById('container');
+
+
+let posts = '';
+
+for (let i = 0; i < post.length; i++){
+    posts +=  ` 
+          <div class="post">
+              <div class="post__header">
+                <div class="post-meta">
+                  <div class="post-meta__icon">
+                    <img class="profile-pic" src="${post[i].profileImage}" alt="Mangione" />
+                  </div>
+                  <div class="post-meta__data">
+                    <div class="post-meta__author">${post[i].author}</div>
+                    <div class="post-meta__time">${post[i].time}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="post__text">${post[i].text}</div>
+              <div class="post__image">
+                <img src="${post[i].postImage}" alt="landscape" />
+              </div>
+              <div class="post__footer">
+                <div class="likes js-likes">
+                  <div class="likes__cta">
+                    <button class="like-button js-like-button" href="#" data-postid="1">
+                      <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                      <span class="like-button__label">Mi Piace</span>
+                    </button>
+                  </div>
+                  <div class="likes__counter">Piace a <b id="like-counter-1" class="js-likes-counter">${post[i].likeNumber}</b> persone</div>
+                </div>
+              </div>
+          </div> 
+        `;
+      
+}
+
+container.innerHTML = posts;
