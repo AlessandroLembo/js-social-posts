@@ -125,18 +125,20 @@ post.forEach ((p, i) => {
   const counter = document.getElementById(`like-counter-${i+1}`);
   // console.log(counter);
   
+  // Raccologo in una variabile il numero di likes di ogni posts.
+  let numb = parseInt(post[i].likeNumber);
+
   // Aggancio un event listener al button
   button.addEventListener('click', function(){
       
-      // Aggiungo la classe per cambiare colore al button
+       // Aggiungo la classe per cambiare colore al button
       button.classList.add('like-button-liked');
       
       // Incremento il numero dei likes
-      const numb = parseInt(post[i].likeNumber);
-      const increment = numb + 1;
-  
+      let increment = numb + 1;
+      
       counter.innerHTML = increment;
- 
+
   })
 
 });
