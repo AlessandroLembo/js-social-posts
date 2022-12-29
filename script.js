@@ -126,7 +126,7 @@ post.forEach ((p, i) => {
   // console.log(counter);
   
   // Raccologo in una variabile il numero di likes di ogni posts.
-  let numb = parseInt(post[i].likeNumber);
+  const numb = parseInt(post[i].likeNumber);
 
   // Aggancio un event listener al button
   button.addEventListener('click', function(){
