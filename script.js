@@ -73,10 +73,12 @@ const post = [
 // Recupero gli elementi dalla pagina.
 const container = document.getElementById('container');
 
-// ciclo for per creare i social posts
+// Variabile dove andare ad inserire i social posts.
 let posts = '';
 
-for (let i = 0; i < post.length; i++){
+// Ciclo forEach per prendere elementi dell'array e caricarli nei singoli posts.
+post.forEach((p, i) => {
+    
     posts +=  ` 
           <div class="post">
               <div class="post__header">
@@ -108,35 +110,36 @@ for (let i = 0; i < post.length; i++){
           </div> 
         `;
       
-}
+});
 
 container.innerHTML = posts;
 
 const buttons = document.querySelectorAll('button');
 
 
-for (let i = 0; i < post.length; i++){
+// ciclo forEach per incrementare il numero dei likes.
+post.forEach ((p, i) => {
 
-    const button = buttons[i];
-    
-    const counter = document.getElementById(`like-counter-${i+1}`);
-    console.log(counter);
-    
-    // Aggancio un event listener al button
-    button.addEventListener('click', function(){
-        
-        // Aggiungo la classe per cambiare colore al button
-        button.classList.add('like-button-liked');
-        
-        // Incremento il numero dei likes
-        const numb = parseInt(post[i].likeNumber);
-        const increment = numb + 1;
-    
-        counter.innerHTML = increment;
-   
-    })
+  const button = buttons[i];
+  
+  const counter = document.getElementById(`like-counter-${i+1}`);
+  // console.log(counter);
+  
+  // Aggancio un event listener al button
+  button.addEventListener('click', function(){
+      
+      // Aggiungo la classe per cambiare colore al button
+      button.classList.add('like-button-liked');
+      
+      // Incremento il numero dei likes
+      const numb = parseInt(post[i].likeNumber);
+      const increment = numb + 1;
+  
+      counter.innerHTML = increment;
+ 
+  })
 
-}
+});
 
   
   
