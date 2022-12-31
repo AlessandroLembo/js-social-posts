@@ -127,18 +127,27 @@ post.forEach ((p, i) => {
   
   // Raccologo in una variabile il numero di likes di ogni posts.
   const numb = parseInt(post[i].likeNumber);
+  
+  // Incremento il numero dei likes
+  const increment = numb + 1;
 
   // Aggancio un event listener al button
   button.addEventListener('click', function(){
       
-       // Aggiungo la classe per cambiare colore al button
-      button.classList.add('like-button-liked');
+      // Variabile che utilizzo per controllare se è già stato messo il like.
+      const isClicked = button.classList.contains('like-button-liked');
       
-      // Incremento il numero dei likes
-      let increment = numb + 1;
+      if (isClicked){
+        // Rimouvo la classe che colora il button e decremento il numero dei likes.
+        button.classList.remove('like-button-liked');
+        counter.innerHTML = numb;
+      } else {
+        // Aggiungo la classe per cambiare colore al button e incremento il numero dei likes.
+        button.classList.add('like-button-liked');
+        counter.innerHTML = increment;
+      }
       
-      counter.innerHTML = increment;
-
+      
   })
 
 });
