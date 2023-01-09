@@ -99,7 +99,7 @@ post.forEach((p, i) => {
               <div class="post__footer">
                 <div class="likes js-likes">
                   <div class="likes__cta">
-                    <button class="like-button js-like-button" href="#" data-postid="1">
+                    <button class="like-button js-like-button" data-postid="1">
                       <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                       <span class="like-button__label">Mi Piace</span>
                     </button>
@@ -146,8 +146,7 @@ post.forEach ((p, i) => {
         button.classList.add('like-button-liked');
         counter.innerHTML = increment;
       }
-      
-      
+ 
   })
 
 });
