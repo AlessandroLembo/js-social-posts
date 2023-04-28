@@ -123,7 +123,6 @@ socialPosts.forEach ((p, i) => {
   const button = buttons[i];
   
   const counter = document.getElementById(`like-counter-${i+1}`);
-  // console.log(counter);
   
   // Raccologo in una variabile il numero di likes di ogni posts.
   const numb = parseInt(p.likeNumber);
