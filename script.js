@@ -27,7 +27,7 @@ incrementiamo il counter dei likes relativo.
 
 
 // Creazione di un array di oggetti.
-const post = [
+const socialPosts = [
     {
        id: '1', 
        profileImage: 'img/profile01.jpg',
@@ -77,24 +77,24 @@ const container = document.getElementById('container');
 let posts = '';
 
 // Ciclo forEach per prendere elementi dell'array e caricarli nei singoli posts.
-post.forEach((p, i) => {
+socialPosts.forEach((p) => {
     
     posts +=  ` 
           <div class="post">
               <div class="post__header">
                 <div class="post-meta">
                   <div class="post-meta__icon">
-                    <img class="profile-pic" src="${post[i].profileImage}" alt="Mangione" />
+                    <img class="profile-pic" src="${p.profileImage}" alt="social image" />
                   </div>
                   <div class="post-meta__data">
-                    <div class="post-meta__author">${post[i].author}</div>
-                    <div class="post-meta__time">${post[i].time}</div>
+                    <div class="post-meta__author">${p.author}</div>
+                    <div class="post-meta__time">${p.time}</div>
                   </div>
                 </div>
               </div>
-              <div class="post__text">${post[i].text}</div>
+              <div class="post__text">${p.text}</div>
               <div class="post__image">
-                <img src="${post[i].postImage}" alt="landscape" />
+                <img src="${p.postImage}" alt="landscape" />
               </div>
               <div class="post__footer">
                 <div class="likes js-likes">
@@ -104,7 +104,7 @@ post.forEach((p, i) => {
                       <span class="like-button__label">Mi Piace</span>
                     </button>
                   </div>
-                  <div class="likes__counter">Piace a <b id="like-counter-${post[i].id}" class="js-likes-counter">${post[i].likeNumber}</b> persone</div>
+                  <div class="likes__counter">Piace a <b id="like-counter-${p.id}" class="js-likes-counter">${p.likeNumber}</b> persone</div>
                 </div>
               </div>
           </div> 
@@ -118,7 +118,7 @@ const buttons = document.querySelectorAll('button');
 
 
 // ciclo forEach per incrementare il numero dei likes.
-post.forEach ((p, i) => {
+socialPosts.forEach ((p, i) => {
 
   const button = buttons[i];
   
@@ -126,7 +126,7 @@ post.forEach ((p, i) => {
   // console.log(counter);
   
   // Raccologo in una variabile il numero di likes di ogni posts.
-  const numb = parseInt(post[i].likeNumber);
+  const numb = parseInt(p.likeNumber);
   
   // Incremento il numero dei likes
   const increment = numb + 1;
